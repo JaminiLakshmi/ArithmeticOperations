@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <meta name="description" content="Welcome">
+        <meta charset="UTF-8">
+        <title>ArithmeticOps</title>
+
+        <style>
+            .body
+            {
+                background-color: pink;
+            }
+            .cont
+            {
+                justify-content: center;
+                text-align: center;
+                height: 350px;
+                width: 200px;
+                margin: 3px;
+                margin-top: 250px;
+                margin-left: 650px;
+                background-color: aqua;
+                border-radius: 15px;
+            }
+        </style>
+    </head>
+
+    <body>
+        
+        <div class="cont">
+        <h1>Arithmetic Operations</h1>
+        <label for="v1">Value1</label>
+        <input type="number" id="v1" placeholder="enter"><br>
+
+        <label for="v2">Value2</label>
+        <input type="number" id="v2" placeholder="enter"><br>
+
+        <label for="id00">Operation:</label>
+        <input list="id1" id="id00" placeholder="select"><br>
+        <datalist id="id1">
+            <option value="Addition"></option>
+            <option value="Subtraction"></option>
+            <option value="Multiplication"></option>
+            <option value="Division"></option>
+            <option value="Modulus"></option>
+            <option value="Power"></option>
+            <option value="Increment"></option>
+            <option value="Decrement"></option>
+        </datalist>
+        <br><button onclick="func()">submit</button>
+        <button onclick="func1()">Reset</button>
+        <p id="res"></p>
+        <p id="res1"></p>
+    </div>
+        <script>
+            function func() 
+            {
+                var x= parseFloat(document.getElementById("v1").value);
+                var y= parseFloat(document.getElementById("v2").value);
+                var opt = document.getElementById("id00").value;
+                if(opt==="Addition")
+                {
+                    res=x+y;
+                }
+                else if(opt==="Subtraction")
+                {
+                    res=x-y;
+                }
+                else if(opt==="Multiplication")
+                {
+                    res=x*y;
+                }
+                else if(opt==="Division")
+                {
+                    res=x/y;
+                }
+                else if(opt==="Modulus")
+                {
+                    res=x%y;
+                }
+                else if(opt==="Power")
+                {
+                    res=x**y;
+                }
+                else if(opt==="Increment")
+                {
+                    res=++x;
+                    res1=++y;
+                }
+                else if(opt==="Decrement")
+                {
+                    res=--x;
+                    res1=--y;
+                }
+                
+                document.getElementById("res").textContent="Result:"+res;
+                document.getElementById("res1").textContent="Result:"+res1;
+               
+            }
+
+            function func1() {
+                document.getElementById("v1").value = "";
+                document.getElementById("v2").value = "";
+                document.getElementById("id00").value = "";
+            }
+        </script>
+    </body>
+</html>
